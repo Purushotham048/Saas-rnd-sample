@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block head_title %} SaaS {% endblock head_title %}</title>
+    </head>
+    <body>
+        <h1>Inheriting the properties of another html page</h1>
+        <p>We extended the base page by including it in a home page</p>
+        <h1>Template variable {{ page_title }}</h1>
+        {% block content %}
+        Hello fuckers
+        {% endblock content%}
+        {% include 'snippets/welcome-user-msg.html' %}
+    </body>
+</html>

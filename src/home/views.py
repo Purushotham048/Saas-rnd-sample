@@ -9,12 +9,13 @@ def home_page_view(request, *args, **kwargs):
     qs = PageVisit.objects.all()
     page_qs = PageVisit.objects.filter(path = request.path)
     my_title ="It's working"
+    html_template = "home_page.html"
     my_context={
         "page_title":my_title,
         "page_visit_count": qs.count(),
         "total_visit_count": page_qs.count()
     }
-    html_template = "home_page.html"
+
     PageVisit.objects.create(path = request.path)
     path = request.path
     print("path", path)

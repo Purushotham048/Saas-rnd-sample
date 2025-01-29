@@ -90,6 +90,8 @@ DATABASES = {
     }
 }
 
+#setting our newdatabase url ad cast it as str
+# we are defining the connection maximum age also for 30
 CONN_MAX_AGE = config("CONN_MAX_AGE", cast = int, default = 30)
 DATABASE_URL = config("DATABASE_URL", cast = str)
 
@@ -137,7 +139,30 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
+#defines url for static files
+STATIC_URL = 'static/' 
+
+#this specifies the directory where staticfiles were stored
+STATIC_BASE_DIR = BASE_DIR/"staticfiles"
+
+#this dir is for vendorfiles and third pary libraries like tailwind etc
+#by using this we can organize the vendor files seperately
+
+STATICFILES_VENDOR_DIR = STATIC_BASE_DIR/"vendors"
+
+#sources(s) for python manage.py collectstatic
+# this is for telling django were to search for static files
+STATICFILES_DIRS =[
+    STATIC_BASE_DIR
+]
+
+# output for python manage.py collectstatic
+#local cdn 
+# this is were we collect all static files when running and store them in local cdn
+STATIC_ROOT = BASE_DIR/ "local-cdn"
+
+if not DEBUG:
+    STATIC_ROOT = BASE_DIR/ "prod-cdn"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

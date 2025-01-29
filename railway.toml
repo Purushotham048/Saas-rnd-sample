@@ -2,10 +2,11 @@
 builder = "DOCKERFILE"
 dockerfilePath = "./Dockerfile"
 watchPatterns = [
-    "Requirements.txt", 
-    "src/**", 
-    "railway.toml",
+    "**/*.py",   # Track all Python files
     "Dockerfile",
+    "Requirements.txt",
+    "railway.toml"
 ]
+
 
 

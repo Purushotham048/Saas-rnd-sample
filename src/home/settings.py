@@ -23,7 +23,7 @@ SECRET_KEY = 'django-insecure-p0g^x&8%d3spz%s-ru!h=lx_x1e@sq5sx%27hz$gvc1c0==@y2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = str(os.environ.get("DJANGO_DEBUG")).lower() == "true"
 
-print("Debug", DEBUG, type(DEBUG))
+print("Debug IS SUCESSFUL OR NOT CHECKING IT SO LET'S GO", DEBUG, type(DEBUG))
 
 ALLOWED_HOSTS = [
     ".railway.app" #https://SaaS.prod.railway.app

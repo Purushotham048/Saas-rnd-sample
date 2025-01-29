@@ -22,7 +22,7 @@ SECRET_KEY = config("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = str(os.environ.get("DJANGO_DEBUG")).lower() == "true"
-
+DEBUG = config("DJANGO_DEBUG")
 print("Hello production server", DEBUG, type(DEBUG))
 
 ALLOWED_HOSTS = [

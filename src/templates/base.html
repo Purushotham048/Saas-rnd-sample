@@ -6,13 +6,12 @@
     </head>
     <body>
         {% include 'nav/navbar.html' %}
-        <h1>Inheriting the properties of another html page</h1>
-        <p>We extended the base page by including it the home page</p>
-        <h1>Template variable {{ page_title }}</h1>
+        {% include 'base/messages.html' with messages=messages%}
         {% block content %}
-        Hello amigos
+    
         {% endblock content%}
         {% include 'base/js.html' %}
+
     </body>
 
 </html>
